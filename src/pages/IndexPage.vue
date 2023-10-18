@@ -60,7 +60,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in upcomingFightsFeed"
         :key="item.id"
       >
@@ -109,7 +109,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in liveEventsFeed"
         :key="item.id"
       >
@@ -158,7 +158,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in BKFCTHAILANDFEED"
         :key="item.id"
       >
@@ -207,7 +207,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in PROSPECTSFeed"
         :key="item.id"
       >
@@ -256,7 +256,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in knuckleUpThrowDownFeed"
         :key="item.id"
       >
@@ -305,7 +305,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in bestOfHeavyWeightsFeed"
         :key="item.id"
       >
@@ -354,7 +354,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in brutalBeatdownFeed"
         :key="item.id"
       >
@@ -403,7 +403,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in epicWomenFeed"
         :key="item.id"
       >
@@ -452,7 +452,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in lightweightFightsFeed"
         :key="item.id"
       >
@@ -501,7 +501,7 @@
       <q-card
         dark
         class="q-ma-md"
-        style="min-width: 300px"
+        style="min-width: 400px"
         v-for="item in featherweightFeed"
         :key="item.id"
       >
