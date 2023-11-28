@@ -4,6 +4,55 @@
     <div class="row q-px-md q-pt-md">
       <div class="col">
         <div class="row">
+          <div class="col text-h6">GET READY FOR BKFC 52 ON OCTOBER 20</div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-wrap overflow-auto">
+      <q-card
+        dark
+        class="q-ma-md"
+        style="min-width: 400px"
+        v-for="item in getReadyForBKFC56Feed"
+        :key="item.id"
+      >
+        <q-img :src="item.media_group[0].media_item[0].src" />
+        <div class="row q-px-sm">
+          <q-expansion-item
+            switch-toggle-side
+            expand-separator
+            :label="item.title"
+          >
+            <div class="row">
+              <div class="col-auto text-bold">Title:</div>
+              <div class="col-auto q-pl-sm text-wrap">{{ item.title }}</div>
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">VideoURL:</div>
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.content.src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">ImageURL</div>
+
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.media_group[0].media_item[0].src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+          </q-expansion-item>
+        </div>
+      </q-card>
+    </div>
+    <div class="row q-px-md q-pt-md">
+      <div class="col">
+        <div class="row">
           <div class="col text-h6">
             BEST OF MIKE PERRY FIGHTING IN BKFC 56 ON DEC 2
           </div>
@@ -54,55 +103,7 @@
     </div>
 
     <!-- OLD -->
-    <div class="row q-px-md q-pt-md">
-      <div class="col">
-        <div class="row">
-          <div class="col text-h6">GET READY FOR BKFC 52 ON OCTOBER 20</div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-wrap overflow-auto">
-      <q-card
-        dark
-        class="q-ma-md"
-        style="min-width: 400px"
-        v-for="item in getReadyForBKFC52Feed"
-        :key="item.id"
-      >
-        <q-img :src="item.media_group[0].media_item[0].src" />
-        <div class="row q-px-sm">
-          <q-expansion-item
-            switch-toggle-side
-            expand-separator
-            :label="item.title"
-          >
-            <div class="row">
-              <div class="col-auto text-bold">Title:</div>
-              <div class="col-auto q-pl-sm text-wrap">{{ item.title }}</div>
-            </div>
-            <div class="row items-center">
-              <div class="col-auto text-bold">VideoURL:</div>
-              <q-btn
-                dense
-                class="col-auto q-pl-sm"
-                @click="copyToClipboard(item.content.src)"
-                >Click to Copy URL</q-btn
-              >
-            </div>
-            <div class="row items-center">
-              <div class="col-auto text-bold">ImageURL</div>
 
-              <q-btn
-                dense
-                class="col-auto q-pl-sm"
-                @click="copyToClipboard(item.media_group[0].media_item[0].src)"
-                >Click to Copy URL</q-btn
-              >
-            </div>
-          </q-expansion-item>
-        </div>
-      </q-card>
-    </div>
     <div class="row q-px-md q-pt-md">
       <div class="col">
         <div class="row">
@@ -601,7 +602,7 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 import { copyToClipboard } from "quasar";
 
-let getReadyForBKFC52Feed = ref([]);
+let getReadyForBKFC56Feed = ref([]);
 let PROSPECTSFeed = ref([]);
 let knuckleUpThrowDownFeed = ref([]);
 let bestOfHeavyWeightsFeed = ref([]);
@@ -624,12 +625,12 @@ function getURL(payload) {
     });
 }
 
-function getReadyForBKFC52() {
+function getReadyForBKFC55() {
   axios
     .get(
-      "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4454&leagueCode=BKFC&teamCode=BKFC&title=GET+READY+FOR+BKFC+52+ON+OCTOBER+20"
+      "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4758&leagueCode=BKFC&teamCode=BKFC&title=GET+READY+FOR+BKFC+56+UTAH+DEC+2"
     )
-    .then((response) => (getReadyForBKFC52Feed.value = response.data.entry));
+    .then((response) => (getReadyForBKFC56Feed.value = response.data.entry));
 }
 
 function PROSPECTS() {
