@@ -614,6 +614,9 @@ let upcomingFightsFeed = ref([]);
 let BKFCTHAILANDFEED = ref([]);
 let liveEventsFeed = ref([]);
 let mikePerryFeed = ref([]);
+let christineFereaFeed = ref([]);
+let kaiStewartFeed = ref([]);
+let howardDavisFeed = ref([]);
 
 function getURL(payload) {
   copyToClipboard(payload)
@@ -625,7 +628,7 @@ function getURL(payload) {
     });
 }
 
-function getReadyForBKFC55() {
+function getReadyForBKFC56() {
   axios
     .get(
       "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4758&leagueCode=BKFC&teamCode=BKFC&title=GET+READY+FOR+BKFC+56+UTAH+DEC+2"
@@ -721,40 +724,32 @@ function mikePerry() {
     .then((response) => (mikePerryFeed.value = response.data.entry));
 }
 
-function liveEvents() {
+function christineFerea() {
   axios
     .get(
       "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
     )
-    .then((response) => (liveEventsFeed.value = response.data.entry));
+    .then((response) => (christineFereaFeed.value = response.data.entry));
 }
 
-function liveEvents() {
+function kaiStewart() {
   axios
     .get(
       "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
     )
-    .then((response) => (liveEventsFeed.value = response.data.entry));
+    .then((response) => (kaiStewartFeed.value = response.data.entry));
 }
 
-function liveEvents() {
+function howardDavis() {
   axios
     .get(
       "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
     )
-    .then((response) => (liveEventsFeed.value = response.data.entry));
-}
-
-function liveEvents() {
-  axios
-    .get(
-      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
-    )
-    .then((response) => (liveEventsFeed.value = response.data.entry));
+    .then((response) => (howardDavisFeed.value = response.data.entry));
 }
 
 onMounted(async () => {
-  getReadyForBKFC52();
+  getReadyForBKFC56();
   PROSPECTS();
   knuckleUpThrowDown();
   bestOfHeavyWeights();
@@ -765,5 +760,9 @@ onMounted(async () => {
   upcomingFights();
   BKFCTHAILAND();
   liveEvents();
+  mikePerry();
+  christineFerea();
+  kaiStewart();
+  howardDavis();
 });
 </script>
