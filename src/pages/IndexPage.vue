@@ -4,7 +4,7 @@
     <div class="row q-px-md q-pt-md">
       <div class="col">
         <div class="row">
-          <div class="col text-h6">GET READY FOR BKFC 52 ON OCTOBER 20</div>
+          <div class="col text-h6">GET READY FOR BKFC 56 UTAH DEC 2</div>
         </div>
       </div>
     </div>
