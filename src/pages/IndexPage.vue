@@ -101,6 +101,159 @@
         </div>
       </q-card>
     </div>
+    <div class="row q-px-md q-pt-md">
+      <div class="col">
+        <div class="row">
+          <div class="col text-h6">
+            BEST OF CHRISTINE FEREA FIGHTING IN BKFC 56 ON DEC 2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-wrap overflow-auto">
+      <q-card
+        dark
+        class="q-ma-md"
+        style="min-width: 400px"
+        v-for="item in christineFereaFeed"
+        :key="item.id"
+      >
+        <q-img :src="item.media_group[0].media_item[0].src" />
+        <div class="row q-px-sm">
+          <q-expansion-item
+            switch-toggle-side
+            expand-separator
+            :label="item.title"
+          >
+            <div class="row">
+              <div class="col-auto text-bold">Title:</div>
+              <div class="col-auto q-pl-sm text-wrap">{{ item.title }}</div>
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">VideoURL:</div>
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.content.src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">ImageURL</div>
+
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.media_group[0].media_item[0].src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+          </q-expansion-item>
+        </div>
+      </q-card>
+    </div>
+    <div class="row q-px-md q-pt-md">
+      <div class="col">
+        <div class="row">
+          <div class="col text-h6">
+            BEST OF KAI STEWART FIGHTING IN BKFC 56 ON DEC 2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-wrap overflow-auto">
+      <q-card
+        dark
+        class="q-ma-md"
+        style="min-width: 400px"
+        v-for="item in kaiStewartFeed"
+        :key="item.id"
+      >
+        <q-img :src="item.media_group[0].media_item[0].src" />
+        <div class="row q-px-sm">
+          <q-expansion-item
+            switch-toggle-side
+            expand-separator
+            :label="item.title"
+          >
+            <div class="row">
+              <div class="col-auto text-bold">Title:</div>
+              <div class="col-auto q-pl-sm text-wrap">{{ item.title }}</div>
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">VideoURL:</div>
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.content.src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">ImageURL</div>
+
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.media_group[0].media_item[0].src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+          </q-expansion-item>
+        </div>
+      </q-card>
+    </div>
+    <div class="row q-px-md q-pt-md">
+      <div class="col">
+        <div class="row">
+          <div class="col text-h6">
+            BEST OF HOWARD DAVIS FIGHTING IN BKFC 56 ON DEC 2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-wrap overflow-auto">
+      <q-card
+        dark
+        class="q-ma-md"
+        style="min-width: 400px"
+        v-for="item in howardDavisFeed"
+        :key="item.id"
+      >
+        <q-img :src="item.media_group[0].media_item[0].src" />
+        <div class="row q-px-sm">
+          <q-expansion-item
+            switch-toggle-side
+            expand-separator
+            :label="item.title"
+          >
+            <div class="row">
+              <div class="col-auto text-bold">Title:</div>
+              <div class="col-auto q-pl-sm text-wrap">{{ item.title }}</div>
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">VideoURL:</div>
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.content.src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">ImageURL</div>
+
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.media_group[0].media_item[0].src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+          </q-expansion-item>
+        </div>
+      </q-card>
+    </div>
 
     <!-- OLD -->
 
@@ -727,7 +880,7 @@ function mikePerry() {
 function christineFerea() {
   axios
     .get(
-      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
+      "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4722&leagueCode=BKFC&teamCode=BKFC&title=BEST+OF+CHRISTINE+FEREA+FIGHTING+IN+BKFC+56+ON+DEC+2"
     )
     .then((response) => (christineFereaFeed.value = response.data.entry));
 }
@@ -735,7 +888,7 @@ function christineFerea() {
 function kaiStewart() {
   axios
     .get(
-      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
+      "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4724&leagueCode=BKFC&teamCode=BKFC&title=BEST+OF+KAI+STEWART+FIGHTING+IN+BKFC+56+ON+DEC+2"
     )
     .then((response) => (kaiStewartFeed.value = response.data.entry));
 }
@@ -743,7 +896,7 @@ function kaiStewart() {
 function howardDavis() {
   axios
     .get(
-      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
+      "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4723&leagueCode=BKFC&teamCode=BKFC&title=BEST+OF+HOWARD+DAVIS+FIGHTING+IN+BKFC+56+ON+DEC+2"
     )
     .then((response) => (howardDavisFeed.value = response.data.entry));
 }
