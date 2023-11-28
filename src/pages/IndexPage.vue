@@ -1,5 +1,59 @@
 <template>
   <q-page class="bg-black text-white">
+    <!-- NEW -->
+    <div class="row q-px-md q-pt-md">
+      <div class="col">
+        <div class="row">
+          <div class="col text-h6">
+            BEST OF MIKE PERRY FIGHTING IN BKFC 56 ON DEC 2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-wrap overflow-auto">
+      <q-card
+        dark
+        class="q-ma-md"
+        style="min-width: 400px"
+        v-for="item in mikePerryFeed"
+        :key="item.id"
+      >
+        <q-img :src="item.media_group[0].media_item[0].src" />
+        <div class="row q-px-sm">
+          <q-expansion-item
+            switch-toggle-side
+            expand-separator
+            :label="item.title"
+          >
+            <div class="row">
+              <div class="col-auto text-bold">Title:</div>
+              <div class="col-auto q-pl-sm text-wrap">{{ item.title }}</div>
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">VideoURL:</div>
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.content.src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+            <div class="row items-center">
+              <div class="col-auto text-bold">ImageURL</div>
+
+              <q-btn
+                dense
+                class="col-auto q-pl-sm"
+                @click="copyToClipboard(item.media_group[0].media_item[0].src)"
+                >Click to Copy URL</q-btn
+              >
+            </div>
+          </q-expansion-item>
+        </div>
+      </q-card>
+    </div>
+
+    <!-- OLD -->
     <div class="row q-px-md q-pt-md">
       <div class="col">
         <div class="row">
@@ -558,6 +612,7 @@ let featherweightFeed = ref([]);
 let upcomingFightsFeed = ref([]);
 let BKFCTHAILANDFEED = ref([]);
 let liveEventsFeed = ref([]);
+let mikePerryFeed = ref([]);
 
 function getURL(payload) {
   copyToClipboard(payload)
@@ -647,6 +702,46 @@ function BKFCTHAILAND() {
       "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4555&leagueCode=BKFC&teamCode=BKFC&title=Get+Ready+for+BKFC+Thailand+5+on+Nov+4"
     )
     .then((response) => (BKFCTHAILANDFEED.value = response.data.entry));
+}
+
+function liveEvents() {
+  axios
+    .get(
+      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
+    )
+    .then((response) => (liveEventsFeed.value = response.data.entry));
+}
+
+function mikePerry() {
+  axios
+    .get(
+      "https://applicaster-api.fanreachdata.io/applicaster/marketing/277?id=4687&leagueCode=BKFC&teamCode=BKFC&title=BEST+OF+MIKE+PERRY+FIGHTING+IN+BKFC+56+ON+DEC+2"
+    )
+    .then((response) => (mikePerryFeed.value = response.data.entry));
+}
+
+function liveEvents() {
+  axios
+    .get(
+      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
+    )
+    .then((response) => (liveEventsFeed.value = response.data.entry));
+}
+
+function liveEvents() {
+  axios
+    .get(
+      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
+    )
+    .then((response) => (liveEventsFeed.value = response.data.entry));
+}
+
+function liveEvents() {
+  axios
+    .get(
+      "https://applicaster-api.fanreachdata.io/applicaster/live/277?leagueCode=BKFC&status=live&teamCode=BKFC&title=Live+Events"
+    )
+    .then((response) => (liveEventsFeed.value = response.data.entry));
 }
 
 function liveEvents() {
