@@ -862,6 +862,7 @@ function howardDavis() {
 }
 
 onMounted(async () => {
+  getReadyForBKFC57();
   getReadyForBKFC56();
   PROSPECTS();
   knuckleUpThrowDown();
